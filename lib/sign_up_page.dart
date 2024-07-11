@@ -27,14 +27,13 @@ class SignUpPage extends StatelessWidget with InputValidationMixin {
                     const SizedBox(
                       height: 40,
                     ),
-                    const Text(
+                    Text(
                       'Sign up',
-                      style:
-                          TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+                      style: Theme.of(context).textTheme.headlineMedium,
                     ),
-                    const Text(
+                    Text(
                       'Create your account',
-                      style: TextStyle(fontSize: 15, height: 2.5),
+                      style: Theme.of(context).textTheme.headlineSmall,
                     ),
                     const SizedBox(
                       height: 20,

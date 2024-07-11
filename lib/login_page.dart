@@ -19,14 +19,10 @@ class LoginPage extends StatelessWidget {
                 const SizedBox(
                   height: 80,
                 ),
-                const Text(
-                  'Welcome Back',
-                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 45),
-                ),
-                const Text(
-                  'Enter your credential to login',
-                  style: TextStyle(height: 0.2, fontSize: 16),
-                ),
+                Text('Welcome Back',
+                    style: Theme.of(context).textTheme.headlineMedium),
+                Text('Enter your credential to login',
+                    style: Theme.of(context).textTheme.headlineSmall),
                 const SizedBox(
                   height: 100,
                 ),
