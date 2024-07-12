@@ -24,7 +24,7 @@ mixin InputValidationMixin {
 
   String? validatePassword(value) {
     if (value!.isEmpty) {
-      return 'Password ';
+      return 'Enter your password ';
     }
     RegExp passwordRegEX =
         RegExp(r'^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[!@#\$&*~]).{8,}$');
