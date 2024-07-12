@@ -36,10 +36,10 @@ class MyApp extends StatelessWidget {
           headlineSmall: TextStyle(fontSize: 15, height: 2),
         ),
       ),
-      home: const LoginPage(),
+      home: LoginPage(),
       routes: {
         '/signup': (context) => SignUpPage(),
-        '/login': (context) => const LoginPage(),
+        '/login': (context) => LoginPage(),
         '/enterlogin': (context) => const HomePage()
       },
     );
