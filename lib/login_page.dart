@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:work_app/components/my_buttons.dart';
+import 'package:work_app/components/validation_part.dart';
 import 'package:work_app/home_page.dart';
 import 'components/my_pages.dart';
 
-class LoginPage extends StatelessWidget {
-  const LoginPage({super.key});
+class LoginPage extends StatelessWidget with InputValidationMixin {
+  LoginPage({super.key});
+
+  final _formKey = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
@@ -26,17 +29,20 @@ class LoginPage extends StatelessWidget {
                 const SizedBox(
                   height: 100,
                 ),
-                MyTextField(
-                  validator: (value) {},
-                  icon: Icons.person,
-                  obscureText: false,
-                  hintText: 'Username',
+                Form(
+                  key: _formKey,
+                  child: MyTextField(
+                    validator: validateUsername,
+                    icon: Icons.person,
+                    obscureText: false,
+                    hintText: 'Username',
+                  ),
                 ),
                 const SizedBox(
                   height: 10,
                 ),
                 MyTextField(
-                    validator: (value) {},
+                    validator: validatePassword,
                     icon: Icons.password,
                     hintText: 'Password',
                     obscureText: true),
@@ -48,8 +54,12 @@ class LoginPage extends StatelessWidget {
                   height: 50,
                   child: MyButtons(
                     onPressed: () {
-                      Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => HomePage()));
+                      if (_formKey.currentState!.validate()) {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => HomePage()));
+                      }
                     },
                     text: 'Login',
                   ),
