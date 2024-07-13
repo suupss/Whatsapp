@@ -11,8 +11,10 @@ class ChatPage extends StatelessWidget {
       itemCount: users.length,
       itemBuilder: (context, index) => GestureDetector(
         onTap: () {
-          Navigator.push(
-              context, MaterialPageRoute(builder: (context) => ChatScreen()));
+          if (index == 0) {
+            Navigator.push(
+                context, MaterialPageRoute(builder: (context) => ChatScreen()));
+          }
         },
         child: ListTile(
           leading: CircleAvatar(
