@@ -5,17 +5,29 @@ import 'package:work_app/login_page.dart';
 
 import 'components/my_pages.dart';
 
-class SignUpPage extends StatelessWidget with InputValidationMixin {
+class SignUpPage extends StatefulWidget with InputValidationMixin {
   SignUpPage({super.key});
 
+  @override
+  State<SignUpPage> createState() => _SignUpPageState();
+}
+
+class _SignUpPageState extends State<SignUpPage> {
   final _formKey = GlobalKey<FormState>();
+
+  final TextEditingController _usernameController = TextEditingController();
+
+  final TextEditingController _passwordController = TextEditingController();
+
+  final TextEditingController _emailController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomInset: false,
       body: SingleChildScrollView(
-        physics: BouncingScrollPhysics(parent: AlwaysScrollableScrollPhysics()),
+        physics: const BouncingScrollPhysics(
+            parent: AlwaysScrollableScrollPhysics()),
         child: SafeArea(
           child: Center(
             child: Padding(
@@ -39,7 +51,8 @@ class SignUpPage extends StatelessWidget with InputValidationMixin {
                       height: 20,
                     ),
                     MyTextField(
-                        validator: validateUsername,
+                        myController: _usernameController,
+                        validator: widget.validateUsername,
                         icon: Icons.person,
                         hintText: 'Username',
                         obscureText: false),
@@ -47,7 +60,8 @@ class SignUpPage extends StatelessWidget with InputValidationMixin {
                       height: 20,
                     ),
                     MyTextField(
-                        validator: validateEmail,
+                        myController: _emailController,
+                        validator: widget.validateEmail,
                         icon: Icons.email,
                         hintText: 'Email',
                         obscureText: false),
@@ -55,7 +69,8 @@ class SignUpPage extends StatelessWidget with InputValidationMixin {
                       height: 20,
                     ),
                     MyTextField(
-                        validator: validatePassword,
+                        myController: _passwordController,
+                        validator: widget.validatePassword,
                         icon: Icons.password,
                         hintText: 'Password',
                         obscureText: true),
@@ -63,7 +78,8 @@ class SignUpPage extends StatelessWidget with InputValidationMixin {
                       height: 20,
                     ),
                     MyTextField(
-                        validator: confirmPassword,
+                        myController: _passwordController,
+                        validator: widget.confirmPassword,
                         icon: Icons.password,
                         hintText: 'Confirm Password',
                         obscureText: true),
