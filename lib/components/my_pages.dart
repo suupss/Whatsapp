@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 
 class MyTextField extends StatelessWidget {
+  final TextEditingController myController;
   final IconData icon;
   final String hintText;
   final bool obscureText;
   final String? Function(String?)? validator;
   const MyTextField(
       {super.key,
+      required this.myController,
       required this.icon,
       required this.hintText,
       required this.obscureText,
@@ -21,6 +23,7 @@ class MyTextField extends StatelessWidget {
       onTapOutside: (e) {
         FocusManager.instance.primaryFocus?.unfocus();
       },
+      controller: myController,
       validator: validator,
       obscureText: obscureText,
       decoration: InputDecoration(
