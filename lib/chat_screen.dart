@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:work_app/components/chat_screen_receiver.dart';
-
 import 'components/chat_texts.dart';
 
 class ChatScreen extends StatefulWidget {
@@ -69,8 +68,8 @@ class _ChatScreenState extends State<ChatScreen> {
             ),
             Padding(
               padding: const EdgeInsets.all(20),
-              child: SizedBox(
-                width: 300,
+              child: Padding(
+                padding: const EdgeInsets.only(right: 60),
                 child: TextField(
                   onTapOutside: (e) {
                     FocusManager.instance.primaryFocus?.unfocus();
@@ -84,7 +83,8 @@ class _ChatScreenState extends State<ChatScreen> {
                           borderRadius: BorderRadius.circular(30),
                           borderSide: BorderSide.none),
                       prefixIcon: Icon(Icons.emoji_emotions),
-                      suffixIcon: Icon(Icons.attach_file)),
+                      suffixIcon: Icon(Icons.attach_file),
+                      hintText: 'Enter your message'),
                 ),
               ),
             ),
