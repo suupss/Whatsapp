@@ -125,8 +125,13 @@ class _SignUpPageState extends State<SignUpPage> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         const Text('Already have an account?   '),
-                        GestureDetector(
-                          onTap: () => Navigator.pushNamed(context, '/login'),
+                        InkWell(
+                          onTap: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => LoginPage()));
+                          },
                           child: const Text(
                             'Login',
                             style: TextStyle(
