@@ -59,7 +59,7 @@ class _ChatPageState extends State<ChatPage> {
                       ),
                     ));
           }
-          return Center(child: CircularProgressIndicator.adaptive());
+          return const Center(child: CircularProgressIndicator.adaptive());
         });
   }
 }
