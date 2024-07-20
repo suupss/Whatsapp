@@ -1,15 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:work_app/login_page/view_model/login_page_view_model.dart';
+import 'package:work_app/login_page/view/login_page_form_view.dart';
 import 'package:work_app/signup_page/view/signup_page_view.dart';
 
-class LoginPage extends StatefulWidget {
+class LoginPage extends StatelessWidget {
   LoginPage({super.key});
-
-  @override
-  State<LoginPage> createState() => _LoginPageState();
-}
-
-class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
