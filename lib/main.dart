@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:work_app/home_page/view/home_page_view.dart';
-import 'package:work_app/login_page/view/login_page_view.dart';
-import 'package:work_app/signup_page/view/signup_page_view.dart';
+import 'package:work_app/home/view/home_view.dart';
+import 'package:work_app/login_page/view/login_page.dart';
+import 'package:work_app/signup_page/view/signup_view.dart';
 
 void main() {
   runApp(const MyApp());
@@ -38,9 +38,9 @@ class MyApp extends StatelessWidget {
       ),
       home: LoginPage(),
       routes: {
-        '/signup': (context) => SignUpPage(),
+        '/signup': (context) => SignupView(),
         '/login': (context) => LoginPage(),
-        '/enterlogin': (context) => const HomePage()
+        '/enterlogin': (context) => const HomeView()
       },
     );
   }
