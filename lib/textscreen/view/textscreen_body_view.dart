@@ -13,7 +13,8 @@ class _TextscreenBodyViewState extends State<TextscreenBodyView> {
   final TextEditingController _myController = TextEditingController();
 
   void onFloatingPress() {
-    chat.add(ChatTexts(_myController.text, false));
+    if (_myController.text.isNotEmpty)
+      chat.add(ChatTexts(_myController.text, false));
     setState(() {});
     _myController.clear();
   }
