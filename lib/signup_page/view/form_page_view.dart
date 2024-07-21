@@ -23,109 +23,68 @@ class _MyWidgetState extends State<MyWidget> {
   @override
   Widget build(BuildContext context) {
     return Form(
-      key: _formKey,
-      child: Column(
-        children: [
-          const SizedBox(
-            height: 40,
-          ),
-          Text(
-            'Sign up',
-            style: Theme.of(context).textTheme.headlineMedium,
-          ),
-          Text(
-            'Create your account',
-            style: Theme.of(context).textTheme.headlineSmall,
-          ),
-          const SizedBox(
-            height: 20,
-          ),
-          MyTextField(
-              myController: _usernameController,
-              validator: widget.validateUsername,
-              icon: Icons.person,
-              hintText: 'Username',
-              obscureText: false),
-          const SizedBox(
-            height: 20,
-          ),
-          MyTextField(
-              myController: _emailController,
-              validator: widget.validateEmail,
-              icon: Icons.email,
-              hintText: 'Email',
-              obscureText: false),
-          const SizedBox(
-            height: 20,
-          ),
-          MyTextField(
-              myController: _passwordController,
-              validator: widget.validatePassword,
-              icon: Icons.password,
-              hintText: 'Password',
-              obscureText: true),
-          const SizedBox(
-            height: 20,
-          ),
-          MyTextField(
-              myController: _passwordController,
-              validator: widget.confirmPassword,
-              icon: Icons.password,
-              hintText: 'Confirm Password',
-              obscureText: true),
-          const SizedBox(
-            height: 20,
-          ),
-          MyButtons(
-              onPressed: () {
-                if (_formKey.currentState!.validate()) {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => LoginPage()));
-                }
-              },
-              text: 'Sign up'),
-          const Text(
-            'Or',
-            style: TextStyle(height: 4.5, fontSize: 15),
-          ),
-          SizedBox(
-            width: double.infinity,
-            height: 50,
-            child: ElevatedButton(
-              onPressed: () {},
-              style: ElevatedButton.styleFrom(
-                side:
-                    const BorderSide(color: Color.fromARGB(255, 173, 32, 166)),
-              ),
-              child: const Text(
-                'Sign In with Google',
-                style: TextStyle(fontSize: 17),
-              ),
+        key: _formKey,
+        child: Column(
+          children: [
+            const SizedBox(
+              height: 40,
             ),
-          ),
-          const SizedBox(
-            height: 40,
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              const Text('Already have an account?   '),
-              InkWell(
-                onTap: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => LoginPage()));
+            Text(
+              'Sign up',
+              style: Theme.of(context).textTheme.headlineMedium,
+            ),
+            Text(
+              'Create your account',
+              style: Theme.of(context).textTheme.headlineSmall,
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+            MyTextField(
+                myController: _usernameController,
+                validator: widget.validateUsername,
+                icon: Icons.person,
+                hintText: 'Username',
+                obscureText: false),
+            const SizedBox(
+              height: 20,
+            ),
+            MyTextField(
+                myController: _emailController,
+                validator: widget.validateEmail,
+                icon: Icons.email,
+                hintText: 'Email',
+                obscureText: false),
+            const SizedBox(
+              height: 20,
+            ),
+            MyTextField(
+                myController: _passwordController,
+                validator: widget.validatePassword,
+                icon: Icons.password,
+                hintText: 'Password',
+                obscureText: true),
+            const SizedBox(
+              height: 20,
+            ),
+            MyTextField(
+                myController: _passwordController,
+                validator: widget.confirmPassword,
+                icon: Icons.password,
+                hintText: 'Confirm Password',
+                obscureText: true),
+            const SizedBox(
+              height: 20,
+            ),
+            MyButtons(
+                onPressed: () {
+                  if (_formKey.currentState!.validate()) {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => LoginPage()));
+                  }
                 },
-                child: const Text(
-                  'Login',
-                  style: TextStyle(
-                      color: Color.fromARGB(255, 173, 32, 166),
-                      fontWeight: FontWeight.w800),
-                ),
-              )
-            ],
-          )
-        ],
-      ),
-    );
+                text: 'Sign up'),
+          ],
+        ));
   }
 }
