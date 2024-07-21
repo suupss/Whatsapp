@@ -93,9 +93,7 @@ class _MyWidgetState extends State<MyWidget> {
             height: 50,
             child: ElevatedButton(
               onPressed: () {},
-              style: TextButton.styleFrom(
-                foregroundColor: const Color.fromARGB(255, 173, 32, 166),
-                backgroundColor: Colors.white,
+              style: ElevatedButton.styleFrom(
                 side:
                     const BorderSide(color: Color.fromARGB(255, 173, 32, 166)),
               ),
