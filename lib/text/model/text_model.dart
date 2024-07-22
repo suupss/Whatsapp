@@ -7,6 +7,6 @@ class ChatTexts {
 List<ChatTexts> chat = [
   ChatTexts('Hello', true),
   ChatTexts('Hi', true),
-  ChatTexts('Hello hello', false),
+  ChatTexts('How are you', false),
   ChatTexts('Helloo', true)
 ];

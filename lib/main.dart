@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:work_app/home/view/home_view.dart';
-import 'package:work_app/login_page/view/login_page.dart';
-import 'package:work_app/signup_page/view/signup_view.dart';
+import 'package:work_app/login/view/login_view.dart';
+import 'package:work_app/signup/view/signup_view.dart';
 
 void main() {
   runApp(const MyApp());
@@ -36,10 +36,10 @@ class MyApp extends StatelessWidget {
           headlineSmall: TextStyle(fontSize: 15, height: 2),
         ),
       ),
-      home: LoginPage(),
+      home: LoginView(),
       routes: {
         '/signup': (context) => SignupView(),
-        '/login': (context) => LoginPage(),
+        '/login': (context) => LoginView(),
         '/enterlogin': (context) => const HomeView()
       },
     );

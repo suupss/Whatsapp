@@ -4,7 +4,7 @@ import 'package:http/http.dart' as http;
 import 'package:work_app/chat/model/chat_model.dart';
 
 class ChatViewmodel {
-  Future<ChatModel> fetchDetail() async {
+  Future<ChatModel> apiFetchDetail() async {
     final response =
         await http.get(Uri.parse('https://reqres.in/api/users?page=p'));
     var data = jsonDecode(response.body);
