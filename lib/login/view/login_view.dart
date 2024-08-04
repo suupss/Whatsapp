@@ -26,7 +26,7 @@ class LoginView extends StatelessWidget {
                   const SizedBox(
                     height: 100,
                   ),
-                  LoginForm(loginViewmodel: loginViewmodel),
+                  LoginForm(),
                   const SizedBox(
                     height: 90,
                   ),

@@ -1,22 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:work_app/text/view_model/text_viewmodel.dart';
 
-class InputTextfield extends StatefulWidget {
-  final TextViewmodel textViewmodel;
-  const InputTextfield({super.key, required this.textViewmodel});
+class InputTextfield extends StatelessWidget {
+  final TextEditingController mycontroller;
 
-  @override
-  State<InputTextfield> createState() => _InputTextfieldState();
-}
+  const InputTextfield({super.key, required this.mycontroller});
 
-class _InputTextfieldState extends State<InputTextfield> {
   @override
   Widget build(BuildContext context) {
     return TextField(
       onTapOutside: (e) {
         FocusManager.instance.primaryFocus?.unfocus();
       },
-      controller: widget.textViewmodel.mycontroller,
+      controller: mycontroller,
       decoration: InputDecoration(
           contentPadding: EdgeInsets.all(7),
           filled: true,

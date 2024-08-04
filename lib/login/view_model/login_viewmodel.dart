@@ -3,11 +3,11 @@ import 'package:http/http.dart' as http;
 import 'package:http/http.dart';
 import 'package:work_app/home/view/home_view.dart';
 
-class LoginViewmodel {
+class LoginViewmodel extends ChangeNotifier {
   final TextEditingController usernamecontroller = TextEditingController();
   final TextEditingController passwordcontroller = TextEditingController();
 
-  requestApilogin(String username, password, BuildContext context) async {
+  void requestApilogin(String username, password, BuildContext context) async {
     try {
       var bodyy = {
         'username': username,

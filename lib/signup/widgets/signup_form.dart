@@ -15,7 +15,6 @@ class SignupForm extends StatefulWidget with InputValidationMixin {
 
 class _MyWidgetState extends State<SignupForm> {
   final _formKey = GlobalKey<FormState>();
-  SignupViewmodel signupViewmodel = SignupViewmodel();
 
   @override
   Widget build(BuildContext context) {
@@ -38,7 +37,7 @@ class _MyWidgetState extends State<SignupForm> {
               height: 20,
             ),
             MyTextField(
-                myController: signupViewmodel.usernamecontroller,
+                myController: widget.signupViewmodel.usernamecontroller,
                 validator: widget.validateUsername,
                 icon: Icons.person,
                 hintText: 'Username',
@@ -47,7 +46,7 @@ class _MyWidgetState extends State<SignupForm> {
               height: 20,
             ),
             MyTextField(
-                myController: signupViewmodel.passwordcontroller,
+                myController: widget.signupViewmodel.emailcontroller,
                 validator: widget.validateEmail,
                 icon: Icons.email,
                 hintText: 'Email',
@@ -56,7 +55,7 @@ class _MyWidgetState extends State<SignupForm> {
               height: 20,
             ),
             MyTextField(
-                myController: signupViewmodel.emailcontroller,
+                myController: widget.signupViewmodel.emailcontroller,
                 validator: widget.validatePassword,
                 icon: Icons.password,
                 hintText: 'Password',
@@ -65,7 +64,7 @@ class _MyWidgetState extends State<SignupForm> {
               height: 20,
             ),
             MyTextField(
-                myController: signupViewmodel.passwordcontroller,
+                myController: widget.signupViewmodel.passwordcontroller,
                 validator: widget.confirmPassword,
                 icon: Icons.password,
                 hintText: 'Confirm Password',

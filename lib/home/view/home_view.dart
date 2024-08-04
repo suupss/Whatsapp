@@ -43,7 +43,7 @@ class HomeView extends StatelessWidget {
                 ),
               ]),
         ),
-        body: const TabBarView(children: [
+        body: TabBarView(children: [
           Center(child: Text('camera')),
           ChatView(),
           Center(child: Text('status')),

@@ -1,21 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:work_app/text/view_model/text_viewmodel.dart';
 
-class FloatingButton extends StatefulWidget {
-  final TextViewmodel textViewmodel;
-  const FloatingButton({super.key, required this.textViewmodel});
-
-  @override
-  State<FloatingButton> createState() => _FloatingButtonState();
-}
-
-class _FloatingButtonState extends State<FloatingButton> {
+class FloatingButton extends StatelessWidget {
+  const FloatingButton({super.key});
   @override
   Widget build(BuildContext context) {
+    print('Build');
+    final provider = Provider.of<TextViewmodel>(context, listen: false);
     return FloatingActionButton(
       onPressed: () {
-        widget.textViewmodel.onFloatingPress();
-        setState(() {});
+        print('I am building');
+        provider.onFloatingPress();
       },
       child: const Icon(Icons.send),
     );
